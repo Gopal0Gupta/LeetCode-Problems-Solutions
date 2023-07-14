@@ -5,10 +5,12 @@ public class Solutions {
     public static boolean isSafe(String[][] board, int row, int col, int number) {
         //row and column
         for (int i = 0; i < board.length; i++) {
-            if (board[i][col] == (String) (number + "")) {
+            if (board[i][col].equals(String.valueOf(number))) {
                 return false;
             }
-            if (board[row][i] == (String) (number + "")) {
+        }
+        for (int j=0;j<board.length;j++){
+            if (board[row][j].equals(String.valueOf(number))) {
                 return false;
             }
         }
@@ -17,7 +19,7 @@ public class Solutions {
         int sc = (col / 3) * 3;
         for (int i = sr; i < sr + 3; i++) {
             for (int j = sc; j < sc + 3; j++) {
-                if (board[i][j] == (String) (number + "")) {
+                if (board[i][j].equals(String.valueOf(number))) {
                     return false;
                 }
             }
